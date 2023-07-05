@@ -16,7 +16,7 @@
   --gray800: #1f2937;
   --gray900: #111827;
 
-  --menuTextColor: var(--white);
+  --menuTextColor: var(--gray900);
   --menuTextHoveringColor: var(--gray400);
   --menuBackgounColor: transparent;
   --menuBackgoundHoveringColor: transparent;

@@ -1,4 +1,3 @@
-@import 'styles/colors';
 @import 'styles/grid';
 .component {
   width: 100%;
@@ -35,11 +34,11 @@
     .menu {
       display: block;
       text-decoration: none;
-      color: $menuTextColor;
-      background-color: $menuBackgounColor;
+      color: var(--menuTextColor);
+      background-color: var(--menuBackgounColor);
       &:hover {
-        color: $menuTextHoveringColor;
-        background-color: $menuBackgoundHoveringColor;
+        color: var(--menuTextHoveringColor);
+        background-color: var(--menuBackgoundHoveringColor);
       }
     }
   }

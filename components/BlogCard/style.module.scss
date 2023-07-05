@@ -1,10 +1,9 @@
-@import 'styles/colors';
 @import 'styles/grid';
 .component {
   border-radius: 10px;
-  box-shadow: 0 0 0 1px $gray200;
+  box-shadow: 0 0 0 1px var(--gray200);
   display: flex;
-  background-color: $gray100;
+  background-color: var(--backgoundColor);
   overflow: hidden;
   .image_area {
     flex: 1;

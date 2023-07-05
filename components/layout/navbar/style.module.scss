@@ -1,0 +1,56 @@
+@import 'styles/colors';
+@import 'styles/grid';
+.component {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 25px;
+  .logo_area {
+    flex-basis: 200px;
+    display: flex;
+    justify-content: flex-start;
+    .logo {
+      font-size: x-large;
+      transition: transform 300ms ease-in-out;
+      font-weight: bold;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .searchbar_area {
+    flex-basis: 500px;
+  }
+  .menu_area {
+    flex-basis: 200px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    list-style: none;
+    .menu {
+      display: block;
+      text-decoration: none;
+      color: $menuTextColor;
+      background-color: $menuBackgounColor;
+      &:hover {
+        color: $menuTextHoveringColor;
+        background-color: $menuBackgoundHoveringColor;
+      }
+    }
+  }
+
+  @media screen and (max-width: $grid_breakpoint_md) {
+    justify-content: center;
+    .logo_area {
+      justify-content: center;
+    }
+    .menu_area {
+      justify-content: center;
+    }
+  }
+}

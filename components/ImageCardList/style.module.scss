@@ -1,0 +1,29 @@
+@import 'styles/colors';
+@import 'styles/grid';
+.component {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  .imageCard {
+    display: flex;
+    gap: 64px;
+    .carousel {
+      border-radius: 10px;
+      overflow: hidden;
+      flex: 1;
+      min-height: 400px;
+      min-width: 300px;
+    }
+    &.reverseCard {
+      flex-direction: row-reverse;
+    }
+  }
+  @media screen and (max-width: $grid_breakpoint_md) {
+    .imageCard {
+      flex-direction: column-reverse;
+      &.reverseCard {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}

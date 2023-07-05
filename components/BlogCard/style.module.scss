@@ -1,0 +1,47 @@
+@import 'styles/colors';
+@import 'styles/grid';
+.component {
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px $gray200;
+  display: flex;
+  background-color: $gray100;
+  .image_area {
+    flex: 1;
+    .carousel {
+      min-height: 384px;
+    }
+  }
+  .text_area {
+    flex: 0.5;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .tags {
+    }
+    .date {
+      font-style: italic;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+    .title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+
+      min-width: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .brief {
+      font-size: 0.875rem;
+    }
+  }
+  @media screen and (max-width: $grid_breakpoint_md) {
+    flex-direction: column;
+  }
+}

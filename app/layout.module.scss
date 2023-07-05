@@ -1,0 +1,49 @@
+@import 'styles/colors';
+@import 'styles/grid';
+.component {
+  display: grid;
+
+  justify-content: center;
+  align-items: start;
+
+  grid-template-rows: max-content auto max-content;
+  grid-template-columns: 1fr;
+
+  min-height: 100vh;
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px 10px;
+    .nav_component {
+      max-width: 1280px;
+    }
+  }
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 10px;
+    width: 100%;
+    .main_component {
+      width: 100%;
+      max-width: 1280px;
+    }
+  }
+  .footer {
+    background-color: rgb(247, 250, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    .footer_component {
+      max-width: 1280px;
+    }
+  }
+  @media screen and (max-width: $grid_breakpoint_md) {
+    .main {
+      padding: 40px 10px;
+    }
+  }
+}

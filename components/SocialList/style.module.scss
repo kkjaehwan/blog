@@ -1,0 +1,21 @@
+@import 'styles/colors';
+@import 'styles/grid';
+
+.component {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  .menu {
+    cursor: pointer;
+    width: 20px;
+
+    color: $menuTextColor;
+    background-color: $menuBackgounColor;
+    &:hover {
+      color: $menuTextHoveringColor;
+      background-color: $menuBackgoundHoveringColor;
+    }
+  }
+  @media screen and (max-width: $grid_breakpoint_md) {
+  }
+}

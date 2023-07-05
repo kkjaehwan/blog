@@ -1,0 +1,34 @@
+@import 'styles/colors';
+@import 'styles/grid';
+.component {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  .title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+  }
+  .posts_area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    .post {
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: $grid_breakpoint_lg) {
+    .posts_area {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (max-width: $grid_breakpoint_md) {
+    .recent_post_area {
+      display: none;
+    }
+    .posts_area {
+      grid-template-columns: 1fr;
+    }
+  }
+}

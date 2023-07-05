@@ -1,0 +1,44 @@
+@import 'styles/colors';
+@import 'styles/grid';
+.component {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+  gap: 10px;
+  .logo_area {
+    flex-basis: 200px;
+    display: flex;
+    justify-content: flex-start;
+    .logo {
+      font-size: x-large;
+      transition: transform 300ms ease-in-out;
+      font-weight: bold;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .socials_area {
+    flex-basis: 200px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media screen and (max-width: $grid_breakpoint_md) {
+    justify-content: center;
+    .logo_area {
+      justify-content: center;
+    }
+    .copyright_area {
+      flex-basis: auto;
+    }
+    .socials_area {
+      justify-content: center;
+    }
+  }
+}

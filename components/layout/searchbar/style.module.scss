@@ -1,0 +1,31 @@
+@import 'styles/colors';
+.component {
+  display: flex;
+
+  border: 1px solid $gray300;
+  border-radius: 10px;
+  background-color: white;
+
+  padding: 10px;
+  gap: 10px;
+  input {
+    width: 100%;
+    border: 0;
+    text-decoration: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .searchIcon {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    .search {
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+}

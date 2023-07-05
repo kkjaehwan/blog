@@ -1,0 +1,36 @@
+@import 'styles/colors';
+@import 'styles/grid';
+
+.card_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+
+  flex: 1;
+  .header {
+    font-size: 0.875rem;
+  }
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .content {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  @media screen and (max-width: $grid_breakpoint_md) {
+    text-align: center;
+    .header {
+      font-size: 0.875rem;
+    }
+    .title {
+      font-size: 2.25rem;
+      font-weight: bold;
+    }
+    .content {
+      font-size: 0.875rem;
+      line-height: 1.625;
+    }
+  }
+}

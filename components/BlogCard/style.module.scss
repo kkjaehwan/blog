@@ -5,6 +5,7 @@
   box-shadow: 0 0 0 1px $gray200;
   display: flex;
   background-color: $gray100;
+  overflow: hidden;
   .image_area {
     flex: 1;
     .carousel {

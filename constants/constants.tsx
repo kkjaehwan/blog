@@ -74,7 +74,7 @@ type site_default = {
 };
 export const site_default: site_default = {
   logo: '<JaehwanKim />',
-  copyright: '©2019 powered by Jaehwan Kim.',
+  copyright: '© Powered by Jaehwan Kim.',
   portrait_url: '/images/jaehwankim.jpg',
   author: {
     name: 'Jaehwan Kim',

@@ -4,15 +4,17 @@ import styles from './style.module.scss';
 import { useEffect, useState } from 'react';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(
-    window?.matchMedia('(prefers-color-scheme: dark)')?.matches ?? false
-  );
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const currentMode = darkMode ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', currentMode);
   }, [darkMode]);
-
+  useEffect(() => {
+    setDarkMode(
+      window?.matchMedia('(prefers-color-scheme: dark)')?.matches ?? false
+    );
+  }, []);
   const handleToggle = () => {
     setDarkMode(!darkMode);
   };

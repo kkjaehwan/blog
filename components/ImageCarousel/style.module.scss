@@ -33,15 +33,21 @@
     }
   }
   .carousel_buttons {
+    width: 100%;
+
     position: absolute;
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 10px;
+
     color: white;
+
     cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
   }
 }

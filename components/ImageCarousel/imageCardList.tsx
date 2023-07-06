@@ -33,8 +33,42 @@ const ImageCarousel = ({
     );
   };
 
+  const [dragging, setDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [distance, setDistance] = useState(0);
+
+  const onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
+    setDragging(true);
+    setStartX(e.clientX);
+    setDistance(0);
+  };
+
+  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+
+    if (dragging) {
+      const currentX = e.clientX;
+      const dx = currentX - startX;
+      setDistance(dx);
+    }
+  };
+
+  const onDragEnd = (event: { preventDefault: () => void }) => {
+    if (distance < 0) {
+      goToNextImage(event);
+    } else if (distance > 0) {
+      goToNextImage(event);
+    }
+    setDragging(false);
+  };
+
   return (
-    <div className={`${styles.images_area} ${className}`}>
+    <div
+      className={`${styles.images_area} ${className}`}
+      onDragStart={onDragStart}
+      onDragOver={onDragOver}
+      onDragEnd={onDragEnd}
+    >
       <div className={styles.images}>
         {images?.map((image, imageIndex) => (
           <Image

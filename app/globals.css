@@ -24,13 +24,6 @@
   --backgoundColor: var(--gray100);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --menuTextColor: var(--white);
-    --backgoundColor: inherit;
-  }
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -42,8 +35,15 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
+/* @media (prefers-color-scheme: dark) {
+  :root {
     color-scheme: dark;
+    --menuTextColor: var(--white);
+    --backgoundColor: inherit;
   }
+} */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --menuTextColor: var(--white);
+  --backgoundColor: inherit;
 }

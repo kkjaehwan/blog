@@ -2,7 +2,8 @@ import Link from 'next/link';
 import styles from './style.module.scss';
 import LogoIcon from '@/components/icons/logo';
 import { site_default } from '@/constants/constants';
-import SearchBar from '../searchbar';
+// import SearchBar from '../searchbar';
+import DarkModeToggle from '@/components/DarkModeToggle';
 export default function Navbar({ className }: { className?: string }) {
   return (
     <div className={`${className} ${styles.component}`}>
@@ -21,6 +22,9 @@ export default function Navbar({ className }: { className?: string }) {
               </Link>
             </li>
           ))}
+          <li>
+            <DarkModeToggle />
+          </li>
         </ul>
       ) : null}
     </div>

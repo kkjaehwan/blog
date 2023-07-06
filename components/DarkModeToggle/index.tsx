@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(
-    window.matchMedia('(prefers-color-scheme: dark)').matches
+    window?.matchMedia('(prefers-color-scheme: dark)')?.matches ?? false
   );
 
   useEffect(() => {

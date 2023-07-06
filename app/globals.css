@@ -47,3 +47,34 @@ a {
   --menuTextColor: var(--white);
   --backgoundColor: inherit;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(107, 114, 128, 0.9),
+    transparent
+  );
+
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(107, 114, 128, 0.9),
+    transparent
+  );
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    transparent,
+    var(--gray500),
+    transparent
+  ); /* Use a gradient background */
+}

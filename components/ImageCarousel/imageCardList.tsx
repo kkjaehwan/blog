@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './style.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import { ImageData } from '@/constants/constants';
+import PrismComponent from '../PrismComponent';
 
 const ImageCarousel = ({
   className,
@@ -111,21 +112,36 @@ const ImageCarousel = ({
       onDragStart={onDragStart}
       onDragOver={onDragOver}
       onDragEnd={onDragEnd}
+      onMouseDown={onDragStart}
+      onMouseMove={onDragOver}
+      onMouseUp={onDragEnd}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
       <div className={styles.images}>
-        {images?.map((image, imageIndex) => (
-          <Image
-            key={imageIndex}
-            src={image.src}
-            alt={`Image ${imageIndex + 1}`}
-            width="768"
-            height="512"
-            className={`${currentIndex === imageIndex ? styles.active : null}`}
-          />
-        ))}
+        {images?.map((image, imageIndex) => {
+          return image.type === 'image' ? (
+            <Image
+              key={imageIndex}
+              src={image.src}
+              alt={`Image ${imageIndex + 1}`}
+              width="768"
+              height="512"
+              className={`${styles.image} ${
+                currentIndex === imageIndex ? styles.active : null
+              }`}
+            />
+          ) : (
+            <PrismComponent
+              code={image.src}
+              language="javascript"
+              className={`${styles.code} ${
+                currentIndex === imageIndex ? styles.active : null
+              }`}
+            />
+          );
+        })}
       </div>
       {images.length > 1 && (
         <div className={styles.carousel_buttons}>

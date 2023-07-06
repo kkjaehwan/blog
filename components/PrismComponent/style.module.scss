@@ -1,0 +1,10 @@
+@import 'styles/grid';
+.component {
+  display: flex;
+  flex-direction: column;
+  .code {
+    height: 100%;
+    border-radius: 10px;
+    overflow: auto;
+  }
+}

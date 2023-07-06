@@ -50,6 +50,7 @@ interface CardData {
 }
 export interface ImageData {
   src: string;
+  type: 'image' | 'code';
 }
 export interface ImageCard {
   card: CardData;
@@ -177,8 +178,8 @@ export const site_default: site_default = {
         ],
       },
       images: [
-        { src: '/images/pexels-photomix-company-230544.jpg' },
-        { src: '/images/pexels-antonio-batinić-4164418.jpg' },
+        { src: '/images/pexels-photomix-company-230544.jpg', type: 'image' },
+        { src: '/images/pexels-antonio-batinić-4164418.jpg', type: 'image' },
       ],
     },
     {
@@ -192,8 +193,42 @@ export const site_default: site_default = {
         ],
       },
       images: [
-        { src: '/images/pexels-rodrigo-santos-3888149.jpg' },
-        { src: '/images/pexels-mikael-blomkvist-6476595.jpg' },
+        { src: '/images/pexels-rodrigo-santos-3888149.jpg', type: 'image' },
+        { src: '/images/pexels-mikael-blomkvist-6476595.jpg', type: 'image' },
+      ],
+    },
+    {
+      card: {
+        header: 'Site Specs',
+        title: 'This site is built with the following specs.',
+        content:
+          'It is built using React 18 and Next.js 13.4. I have excluded any unnecessary third-party libraries.',
+        buttons: [
+          { title: 'Button 1', link: 'link1' },
+          { title: 'Button 2', link: 'link2' },
+        ],
+      },
+      images: [
+        {
+          src: `"@fortawesome/fontawesome-svg-core": "^6.4.0",
+"@fortawesome/free-brands-svg-icons": "^6.4.0",
+"@fortawesome/free-regular-svg-icons": "^6.4.0",
+"@fortawesome/free-solid-svg-icons": "^6.4.0",
+"@fortawesome/react-fontawesome": "^0.2.0",
+"@types/node": "20.3.1",
+"@types/prismjs": "^1.26.0",
+"@types/react": "18.2.13",
+"@types/react-dom": "18.2.6",
+"eslint": "8.43.0",
+"eslint-config-next": "13.4.7",
+"next": "13.4.7",
+"prismjs": "^1.29.0",
+"react": "18.2.0",
+"react-dom": "18.2.0",
+"sass": "^1.63.6",
+"typescript": "5.1.3"`,
+          type: 'code',
+        },
       ],
     },
   ],
@@ -207,6 +242,7 @@ export const site_default: site_default = {
       images: [
         {
           src: 'https://images.pexels.com/photos/11038549/pexels-photo-11038549.jpeg',
+          type: 'image',
         },
       ],
       articles: [
@@ -215,6 +251,7 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/545960/pexels-photo-545960.jpeg',
+              type: 'image',
             },
           ],
           content:
@@ -237,6 +274,7 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/1562058/pexels-photo-1562058.jpeg',
+              type: 'image',
             },
           ],
           content:
@@ -267,6 +305,7 @@ export const site_default: site_default = {
       images: [
         {
           src: 'https://images.pexels.com/photos/3394069/pexels-photo-3394069.jpeg',
+          type: 'image',
         },
       ],
       articles: [
@@ -275,9 +314,11 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/5928602/pexels-photo-5928602.jpeg',
+              type: 'image',
             },
             {
               src: 'https://images.pexels.com/photos/5928602/pexels-photo-5928602.jpeg',
+              type: 'image',
             },
           ],
           content:
@@ -300,6 +341,7 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/15396712/pexels-photo-15396712.jpeg',
+              type: 'image',
             },
           ],
           content:
@@ -330,6 +372,7 @@ export const site_default: site_default = {
       images: [
         {
           src: 'https://images.pexels.com/photos/709857/pexels-photo-709857.jpeg',
+          type: 'image',
         },
       ],
       articles: [
@@ -338,6 +381,7 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/975771/pexels-photo-975771.jpeg',
+              type: 'image',
             },
           ],
           content:
@@ -360,6 +404,7 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/2739664/pexels-photo-2739664.jpeg',
+              type: 'image',
             },
           ],
           content:
@@ -390,6 +435,7 @@ export const site_default: site_default = {
       images: [
         {
           src: 'https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg',
+          type: 'image',
         },
       ],
       articles: [
@@ -398,6 +444,7 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/1534057/pexels-photo-1534057.jpeg',
+              type: 'image',
             },
           ],
           content:
@@ -420,6 +467,7 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/618612/pexels-photo-618612.jpeg',
+              type: 'image',
             },
           ],
           content:
@@ -450,6 +498,7 @@ export const site_default: site_default = {
       images: [
         {
           src: 'https://images.pexels.com/photos/5919562/pexels-photo-5919562.jpeg',
+          type: 'image',
         },
       ],
       articles: [
@@ -458,6 +507,7 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/17060504/pexels-photo-17060504/free-photo-of-amandonos-maravillosamente.jpeg',
+              type: 'image',
             },
           ],
           content:
@@ -480,6 +530,7 @@ export const site_default: site_default = {
           images: [
             {
               src: 'https://images.pexels.com/photos/6473041/pexels-photo-6473041.jpeg',
+              type: 'image',
             },
           ],
           content:

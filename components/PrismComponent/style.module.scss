@@ -2,9 +2,12 @@
 .component {
   display: flex;
   flex-direction: column;
-  .code {
+  pre {
     height: 100%;
     border-radius: 10px;
     overflow: auto;
+    code {
+      white-space: pre-wrap;
+    }
   }
 }

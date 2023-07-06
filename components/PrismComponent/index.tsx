@@ -18,7 +18,7 @@ const PrismComponent = ({
 
   return (
     <div className={`${styles.component} ${className}`}>
-      <pre className={styles.code}>
+      <pre>
         <code className={`language-${language}`}>{code}</code>
       </pre>
     </div>

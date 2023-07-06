@@ -134,6 +134,7 @@ const ImageCarousel = ({
             />
           ) : (
             <PrismComponent
+              key={imageIndex}
               code={image.src}
               language="javascript"
               className={`${styles.code} ${

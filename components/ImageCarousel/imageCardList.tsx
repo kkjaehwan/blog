@@ -62,12 +62,37 @@ const ImageCarousel = ({
     setDragging(false);
   };
 
+  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setDragging(true);
+    setStartX(e.touches[0].clientX);
+    setDistance(0);
+  };
+
+  const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (dragging) {
+      const currentX = e.touches[0].clientX;
+      const dx = currentX - startX;
+      setDistance(dx);
+    }
+  };
+
+  const onTouchEnd = (event: { preventDefault: () => void }) => {
+    if (distance < 0) {
+      goToNextImage(event);
+    } else if (distance > 0) {
+      goToNextImage(event);
+    }
+    setDragging(false);
+  };
   return (
     <div
       className={`${styles.images_area} ${className}`}
       onDragStart={onDragStart}
       onDragOver={onDragOver}
       onDragEnd={onDragEnd}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
       <div className={styles.images}>
         {images?.map((image, imageIndex) => (

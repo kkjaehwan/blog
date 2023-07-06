@@ -73,7 +73,7 @@ type site_default = {
 };
 export const site_default: site_default = {
   logo: '<JaehwanKim />',
-  copyright: '©2023 powered by Jaehwan Kim.',
+  copyright: '©2019 powered by Jaehwan Kim.',
   portrait_url: '/images/jaehwankim.jpg',
   author: {
     name: 'Jaehwan Kim',
@@ -119,7 +119,7 @@ export const site_default: site_default = {
           ],
         },
         {
-          period: 'Jun 2020 - Dec 2021',
+          period: 'Jun 2019 - Dec 2021',
           name: 'Freelancer',
           duty: 'Fullstack Developer',
           tags: [
@@ -135,7 +135,7 @@ export const site_default: site_default = {
           ],
         },
         {
-          period: 'May 2015 - Apr 2020',
+          period: 'May 2015 - Apr 2019',
           name: 'Nonghyup Bank',
           duty: 'System Manager and Full Stack Developer',
           tags: [
@@ -200,7 +200,7 @@ export const site_default: site_default = {
   blog: [
     {
       id: '1',
-      date: '2023-06-01',
+      date: '2019-06-01',
       title: 'Exploring the Marvels of Nature',
       brief:
         'Embark on a journey through breathtaking landscapes and awe-inspiring wonders of nature.',
@@ -260,7 +260,7 @@ export const site_default: site_default = {
     },
     {
       id: '2',
-      date: '2023-06-05',
+      date: '2019-06-05',
       title: 'Unveiling Ancient Civilizations',
       brief:
         'Delve into the mysteries and marvels of ancient civilizations that shaped our world.',
@@ -323,7 +323,7 @@ export const site_default: site_default = {
     },
     {
       id: '3',
-      date: '2023-06-10',
+      date: '2019-06-10',
       title: 'Journey into the Heart of the Amazon Rainforest',
       brief:
         "Discover the wonders and biodiversity of the world's largest tropical rainforest.",
@@ -383,7 +383,7 @@ export const site_default: site_default = {
     },
     {
       id: '4',
-      date: '2023-06-15',
+      date: '2019-06-15',
       title: 'Captivating Cultural Experiences',
       brief:
         'Immerse yourself in diverse cultures and traditions from around the world.',
@@ -443,7 +443,7 @@ export const site_default: site_default = {
     },
     {
       id: '5',
-      date: '2023-06-20',
+      date: '2019-06-20',
       title: 'Adventures in the Wild',
       brief:
         "Embark on thrilling escapades in some of the world's most captivating natural landscapes.",

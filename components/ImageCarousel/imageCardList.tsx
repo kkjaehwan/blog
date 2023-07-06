@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import styles from './style.module.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ImageData } from '@/constants/constants';
 
 const ImageCarousel = ({
@@ -12,18 +12,33 @@ const ImageCarousel = ({
   images: ImageData[];
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null); // Ref to store the interval ID
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 10000);
+    const startInterval = () => {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 10000);
+    };
 
-    return () => clearInterval(interval);
+    startInterval(); // Start the interval initially
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current); // Clear the interval when component unmounts
+      }
+    };
   }, [images]);
 
   const goToNextImage = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current); // Clear the interval
+    }
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 10000); // Start the interval again
   };
 
   const goToPreviousImage = (event: { preventDefault: () => void }) => {
@@ -31,6 +46,12 @@ const ImageCarousel = ({
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current); // Clear the interval
+    }
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 10000); // Start the interval again
   };
 
   const [dragging, setDragging] = useState(false);

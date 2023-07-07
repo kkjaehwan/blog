@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       <PageSEO
-        title={site_default.siteMetadata.title}
-        description={site_default.siteMetadata.description}
+        title={`Who is ${site_default.author.name}`}
+        description={`Who is ${site_default.author.name}'`}
       />
       <div className={styles.component}>
         <div className={styles.profile_img}>

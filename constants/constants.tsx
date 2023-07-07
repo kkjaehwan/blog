@@ -61,11 +61,18 @@ interface UserIntroduction {
   name: string;
   brief: string;
 }
+interface SiteMeta {
+  siteUrl: string;
+  socialBanner: string;
+  title: string;
+  description: string;
+}
 type site_default = {
   logo: string;
   copyright: string;
   portrait_url: string;
   author: UserIntroduction;
+  siteMetadata: SiteMeta;
   menu: Menu[];
   socialList: Menu[];
   historyList: HistoryBox[];
@@ -79,6 +86,12 @@ export const site_default: site_default = {
   author: {
     name: 'Jaehwan Kim',
     brief: `Full-Stack Developer with React, Java and Express`,
+  },
+  siteMetadata: {
+    siteUrl: 'https://jaehwankim.vercel.app',
+    socialBanner: 'favicon.ico',
+    title: `Jaehwan Kim'g Blog`,
+    description: 'A blog created with Next.js and SCSS',
   },
   menu: [
     { title: 'Blog', type: 'link', path: '/blog' },

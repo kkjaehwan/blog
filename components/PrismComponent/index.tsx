@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import styles from './style.module.scss';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
+
 const PrismComponent = ({
   className,
   language,
